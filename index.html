@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Алгоритм выбора машины</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" async></script>        
+    </head> 
+   
+    <!-- да да тут куча итальянского бляда -->
+
+    <body>   
+
+        <!-- Вид машины -->
+        <div id = "d1">
+            <table>
+                <tr>
+                    <td>
+                        <p> Вид машины</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="r1" type="radio" value="1" onclick="check1()"> <label>Легковая</label>
+                    </td>
+                    <td>
+                        <input name="r1" type="radio" value="2" onclick="check1()"> <label>Грузовая</label>
+                    </td>
+                </tr>
+            </table>
+        </div>  
+
+        <!-- Вид топлива легковой -->
+        <div id = "d21" class="div21">
+            <table>
+                <tr>
+                    <td>
+                        <p> Вид топлива</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>            
+                        <input name="r21" type="radio" value="1" onclick="check21()"> <label>Бензин</label>
+                    </td>
+                    <td>
+                        <input name="r21" type="radio" value="2" onclick="check21()"> <label>Дизель</label>
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Вид топлива грузовой -->
+        <div id = "d22" class="div22">
+            <table>
+                <tr>
+                    <td>
+                        <p> Вид топлива</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="r22" type="radio" value="1" onclick="check22()" value="true"> <label>Дизель</label>
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Назначение при выборе бензина у легковой -->
+        <div id = "d31" class="div31">
+            <table>
+                <tr>
+                    <td>
+                        <p> Назначение машины</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input name="r31" type="radio" value="1" onclick="check31()"> <label>Для личного пользования</label>
+                    </td>
+                    <td>
+                        <input name="r31" type="radio" value="2" onclick="check31()"> <label>Перевозка людей</label>
+                    </td>
+                    <td>            
+                        <input name="r31" type="radio" value="3" onclick="check31()"> <label>Перевозка грузов</label>
+                    </td>
+                    <td>            
+                        <input name="r31" type="radio" value="4" onclick="check31()"> <label>Универсальная</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!--Назначение при выборе дизеля у грузовой  -->
+        <div id = "d32" class="div32">
+            <table>
+                <tr>
+                    <td>
+                        <p> Назначение машины</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>            
+                        <input name="r32" type="radio" value="1" onclick="check32()"> <label>Перевозка грузов</label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Вид кузова легковой для личного пользования -->
+        <div id = "d41" class="div41">
+            <table>
+                <tr>
+                    <td>
+                        <p> Вид кузова</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>            
+                        <input name="r41" type="radio" value="1" onclick="check41()"> <label>Седан</label>
+                    </td>
+                    <td>
+                        <input name="r41" type="radio" value="2" onclick="check41()"> <label>Универсал</label>
+                    </td>
+                    <td>
+                        <input name="r41" type="radio" value="3" onclick="check41()"> <label>Хэтчбек</label>
+                    </td>
+                    <td>
+                        <input name="r41" type="radio" value="4" onclick="check41()"> <label>Минивен</label>
+                    </td>
+                    <td>
+                        <input name="r41" type="radio" value="5" onclick="check41()"> <label>Внедорожник</label>
+                    </td>
+                    <td>
+                        <input name="r41" type="radio" value="6" onclick="check41()"> <label>Купе</label>
+                    </td>    
+                    <td>
+                        <input name="r41" type="radio" value="7" onclick="check41()"> <label>Пикап</label>
+                    </td>
+                    <td>
+                        <input name="r41" type="radio" value="8" onclick="check41()"> <label>Фургон</label>
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Вид кузова легковой для перевозки людей -->
+        <div id = "d42" class="div42">
+            <table>
+                <tr>
+                    <td>
+                        <p> Вид кузова</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>            
+                        <input name="r42" type="radio" value="1" onclick="check42()"> <label>Седан</label>
+                    </td>
+                    <td>
+                        <input name="r42" type="radio" value="2" onclick="check42()"> <label>Универсал</label>
+                    </td>
+                    <td>
+                        <input name="r42" type="radio" value="3" onclick="check42()"> <label>Хэтчбек</label>
+                    </td>
+                    <td>
+                        <input name="r42" type="radio" value="4" onclick="check42()"> <label>Минивен</label>
+                    </td>
+                    <td>
+                        <input name="r42" type="radio" value="5" onclick="check42()"> <label>Внедорожник</label>
+                    </td>  
+                    <td>
+                        <input name="r42" type="radio" value="6" onclick="check42()"> <label>Лимузин</label>
+                    </td>
+                    <td>
+                        <input name="r42" type="radio" value="7" onclick="check42()"> <label>Фургон</label>
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Вид кузова легковой для перевозки грузов -->
+        <div id = "d43" class="div43">
+            <table>
+                <tr>
+                    <td>
+                        <p> Вид кузова</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>            
+                        <input name="r43" type="radio" value="1" onclick="check43()"> <label>Универсал</label>
+                    </td>
+                    <td>
+                        <input name="r43" type="radio" value="2" onclick="check43()"> <label>Пикап</label>
+                    </td>
+                    <td>
+                        <input name="r43" type="radio" value="3" onclick="check43()"> <label>Фургон</label>
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Вид кузова легковой универсальный -->
+        <div id = "d44" class="div44">
+            <table>
+                <tr>
+                    <td>
+                        <p> Вид кузова</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>            
+                        <input name="r44" type="radio" value="1" onclick="check44()"> <label>Универсал</label>
+                    </td>
+                    <td>
+                        <input name="r44" type="radio" value="2" onclick="check44()"> <label>Фургон</label>
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Вид кузова грузового автомобиля -->
+        <div id = "d45" class="div45">
+            <table>
+                <tr>
+                    <td>
+                        <p> Вид кузова</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>            
+                        <input name="r45" type="radio" value="1" onclick="check45()"> <label>"Jumbo"</label>
+                    </td>
+                    <td>
+                        <input name="r45" type="radio" value="2" onclick="check45()"> <label>Рефрижераторный фургон</label>
+                    </td>
+                    <td>
+                        <input name="r45" type="radio" value="3" onclick="check45()"> <label>Изотермический фургон</label>
+                    </td>
+                    <td>
+                        <input name="r45" type="radio" value="4" onclick="check45()"> <label>Открытая платформа</label>
+                    </td>
+                    <td>
+                        <input name="r45" type="radio" value="5" onclick="check45()"> <label>Автоцистерна</label>
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Вид кузова седан бензин -->
+        <div id = "d51" class="div51">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Lada Granta</h4>
+                            Двигатель: Бензин, 1.6, 87 л.с.<br>
+                            Коробка переда: Механика, 5 ступеней<br>
+                            Привод: Передний<br>
+                            Расход топлива, л: 6.8 смешанный / 9.1 город / 5.3 трасса<br>      
+                        <img class="img" width="200" height="100" src="https://image-server.autospot.ru/images/1/0/2/2/1/0/1003611/resize/800x0/1003611.webp">
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Вид кузова универсал бензин -->
+        <div id = "d52" class="div52">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>LADA Largus универсал (5м) Standard</h4>
+                            Двигатель: Бензин, 1.6, 87 л.с.<br>
+                            Коробка переда: Механика, 5 ступеней<br>
+                            Привод: Передний<br>
+                            Расход топлива, л: 7.1 смешанный / 9.3 город / 5.5 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://volgograd.agat-group.com/upload/42/42b64294b43f25202f06f9f92c09d049.png">
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Вид кузова хэтчбек бензин -->
+        <div id = "d53" class="div53">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>LADA Priora хэтчбек</h4>
+                            Двигатель: Бензин, 1.6, 98 л.с.<br>
+                            Коробка переда: Механика, 5 ступеней<br>
+                            Привод: Передний<br>
+                            Расход топлива, л: 7.3 смешанный / 9.8 город / 5.6 трасса<br>  
+                        <img class="img" width="200" height="100" src="https://agat-group.com/upload/e3/e395fec34c8c74bcdd42aff2da0a856d.jpg">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова минивен бензин -->
+        <div id = "d54" class="div54">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Chrysler Pacifica</h4>
+                            Двигатель: Бензин, 3.6, 279 л.с.<br>
+                            Коробка переда: Автоматическая, 9 ступеней<br>
+                            Привод: Передний<br>
+                            Расход топлива, л: 9.3 смешанный / 11.9 город / 8.1 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://www.chrysler.ru/img/color/Brilliant-Black-Crystal.jpg">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова внедорожник бензин -->
+        <div id = "d55" class="div55">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Toyota Fortuner</h4>
+                            Двигатель: Бензин, 2.7, 166 л.с.<br>
+                            Коробка переда: Механика, 5 ступеней<br>
+                            Привод: Полный <br>
+                            Расход топлива, л: 10,7 смешанный / 12.7 город / 8.5 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://31t433rm3n.a.trbcdn.net/i/files2/auto/2018/01/Toyota_Fortuner_2018_new-engine_price_2.jpg">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова купе бензин -->
+        <div id = "d56" class="div56">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Ferrari 458</h4>
+                            Двигатель: Бензин, 4.5, 570 л.с.<br>
+                            Коробка переда: Робот, 7 ступеней<br>
+                            Привод: Задний <br>
+                            Расход топлива, л: 13.7 смешанный / 17.5 город / 10.3 трасса<br>     
+                        <img class="img" width="200" height="100" src="http://www.agts-spb.ru/i/rashod/ferrari/458_italia/2bfa0/12832/1.webp">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова пикап бензин -->
+        <div id = "d57" class="div57">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Ford Ranger</h4>
+                            Двигатель: Бензин, 2.5, 166  л.с.<br>
+                            Коробка переда: Механика, 5 ступеней<br>
+                            Привод: Полный<br>
+                            Расход топлива, л: 10.8 смешанный / 14.6 город / 8.9 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://s0.rbk.ru/v6_top_pics/resized/1440xH/media/img/4/01/755160033915014.jpg">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова лимузин бензин -->
+        <div id = "d58" class="div58">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Lincoln Town Car</h4>
+                            Двигатель: Бензин, 4.6, 214 л.с.<br>
+                            Коробка переда: Автоматическая, 9 ступеней<br>
+                            Привод: Задний<br>
+                            Расход топлива, л: 12.4 смешанный / 15.5 город / 10.1 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://upload.wikimedia.org/wikipedia/commons/7/74/Lincoln_Town_Car_--_01-28-2010.jpg">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова фургон бензин -->
+        <div id = "d59" class="div59">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>ГАЗЕЛЬ NEXT Грузопассажирский фургон</h4>
+                            Двигатель: Бензин, 2.7, 107 л.с.<br>
+                            Коробка переда: Механика, 5 ступеней<br>
+                            Привод: Задний<br>
+                            Расход топлива, л: 10.7 смешанный / 9,8 город / 12,1 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://azgaz.ru/img/gazelle-next-van/combi-long/sydney/1.png">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова "Jumbo" -->
+        <div id = "d61" class="div61">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>KAMAZ - 65117-6010-48(A5)</h4>
+                            Двигатель: Дизель, 6,7, 300 л.с.<br>
+                            Коробка переда: Механика, 9 ступеней<br>
+                            Привод: Задний<br>
+                            Расход топлива, л: 22.3 смешанный / 24.6 город / 19.5 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://truckinstock.com/upload/iblock/8c2/8c2db87fb5be10d1ba42fb0bea74f260.jpg">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова Рефрижераторный фургон -->
+        <div id = "d62" class="div62">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>HINO 300</h4>
+                            Двигатель: Дизель, 4, 150 л.с.<br>
+                            Коробка переда: Механика, 5 ступеней<br>
+                            Привод: Задний<br>
+                            Расход топлива, л: 17.7 смешанный / 18.6 город / 15 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://super-trucks.ru/image/cache/catalog/cat_img/ref/hino/hino-300/hino-300-all/ref-hino-300-1-800x600.jpg">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова Изотермический фургон -->
+        <div id = "d63" class="div63">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Foton Auman</h4>
+                            Двигатель: Дизель, 3.7, 170 л.с.<br>
+                            Коробка переда: Механика, 5 ступеней<br>
+                            Привод: Задний<br>
+                            Расход топлива, л: 19.3 смешанный / 22.4 город / 16 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://static.baza.drom.ru/drom/1547554674718_default">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова Открытая платформа -->
+        <div id = "d64" class="div64">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>SCANIA 124L 360</h4>
+                            Двигатель: Дизель, 11.7, 360 л.с.<br>
+                            Коробка переда: Механика, 14 ступеней<br>
+                            Привод: Задний<br>
+                            Расход топлива, л: 19,6 смешанный / 23.4 город / 18.4 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://autoline24.ru/img/s/gruzovik-gruzovik-platformaSCANIA-124L-360-6x2---1565874111220454763_big--19081516014911599300.jpg">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова Автоцистерна -->
+        <div id = "d65" class="div65">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>SCANIA R 520</h4>
+                            Двигатель: Дизель, 16.4, 730 л.с.<br>
+                            Коробка переда: Автоматическая, 14 ступеней<br>
+                            Привод: Задний<br>
+                            Расход топлива, л: 36.5 смешанный / 38.3 город / 35.4 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://st.mascus.com/imagetilewm/product/63f6c424/scania-r-520,358d5f25.jpg">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова седан дизель -->
+        <div id = "d71" class="div71">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Mercedes-Benz E-класс</h4>
+                            Двигатель: Дизель, 2.1, 204 л.с.<br>
+                            Коробка переда: Автоматическая, 7 ступеней<br>
+                            Привод: Полный<br>
+                            Расход топлива, л: 5.5 смешанный / 6.5 город / 4.9 трасса<br>      
+                        <img class="img" width="200" height="100" src="https://48.img.avito.st/image/1/ETJU9baxvdtiQj_WepVTKqhWvd_oVLfZ">
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Вид кузова универсал дизель -->
+        <div id = "d72" class="div72">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Volkswagen Passat</h4>
+                            Двигатель: Дизель, 2, 140 л.с.<br>
+                            Коробка переда: Робот <br>
+                            Привод: Передний<br>
+                            Расход топлива, л: 5.7 смешанный / 6.3 город / 4.8 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://favorit-motors.ru/upload/resize_cache/fm2/072e2800add28f804b131e6405ae4ed4_0_0.webp">
+                    </td>
+                </tr>
+            </table>  
+        </div>
+
+        <!-- Вид кузова хэтчбек дизель -->
+        <div id = "d73" class="div73">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>LFord Fiesta</h4>
+                            Двигатель: Дизель, 1.4, 68 л.с.<br>
+                            Коробка переда: Механика, 5 ступеней<br>
+                            Привод: Передний<br>
+                            Расход топлива, л: 7.3 смешанный / 9.8 город / 5.6 трасса<br>  
+                        <img class="img" width="200" height="100" src="https://64.img.avito.st/image/1/UQ3v6Lax_eTZX3_pwY0IABNL_eBTSffm">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова минивен дизель -->
+        <div id = "d74" class="div74">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Opel Zafira</h4>
+                            Двигатель: Дизель, 2.0, 165 л.с.<br>
+                            Коробка переда: Автоматическая, 9 ступеней<br>
+                            Привод: Передний<br>
+                            Расход топлива, л: 6.5 смешанный / 7.5 город / 5.7 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://75.img.avito.st/image/1/HoYxE7axsm8HpDBiAVsVpM2wsmuNsrht">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова внедорожник дизель -->
+        <div id = "d75" class="div75">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Mitsubishi Pajero Sport</h4>
+                            Двигатель: Дизель, 2.5, 178 л.с.<br>
+                            Коробка переда: Автоматическая, 7 ступеней<br>
+                            Привод: Полный <br>
+                            Расход топлива, л: 7.8 смешанный / 8.8 город / 6.7 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://82.img.avito.st/image/1/v-7Ry7axEwfnfJEKo5X48S1oEwNtahkF">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова купе дизель -->
+        <div id = "d76" class="div76">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>BMW 4</h4>
+                            Двигатель: Дизель, 2.0, 184  л.с.<br>
+                            Коробка переда: Автоматическая, 7 ступеней<br>
+                            Привод: Задний <br>
+                            Расход топлива, л: 6.3 смешанный / 8.2 город / 4.8 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://79.img.avito.st/image/1/5l6BJLaxSre3k8i6wW-9KX2HSrM9hUC1">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова пикап дизель -->
+        <div id = "d77" class="div77">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Mitsubishi L200</h4>
+                            Двигатель: Дизель, 2.5, 136  л.с.<br>
+                            Коробка переда: Автоматическая, 7 ступеней<br>
+                            Привод: Полный<br>
+                            Расход топлива, л: 7.9 смешанный / 8.7 город / 7.1 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://65.img.avito.st/image/1/zClj1baxYMBVYuLNd_aBBp92YMTfdGrC">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова лимузин дизель -->
+        <div id = "d78" class="div78">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>BMW X6</h4>
+                            Двигатель: Дизель, 3.0, 286 л.с.<br>
+                            Коробка переда: Автоматическая, 7 ступеней<br>
+                            Привод: Полный<br>
+                            Расход топлива, л: 8.2 смешанный / 9.3 город / 7.1 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://67.img.avito.st/image/1/Sh5aD7ax5vdsuGT6QiJXFqms5vPmruz1">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+        <!-- Вид кузова фургон дизель -->
+        <div id = "d79" class="div79">
+            <table>
+                <tr>
+                    <td>    
+                        <p> <h4>Ford Transit</h4>
+                            Двигатель: Дизель, 2.2, 125 л.с.<br>
+                            Коробка переда: Механика, 6 ступеней<br>
+                            Привод: Передний<br>
+                            Расход топлива, л: 8.9 смешанный / 10.4 город / 7.7 трасса<br>     
+                        <img class="img" width="200" height="100" src="https://autoru.naydex.net/t14Hzz039/5ec61dwajNYB/XeAmdrg59VAaks3r7uy_QSFv6olwmaqOUcLKcKjmpza_Nlyui_C0UQPzP6N0X1HjdnpZiI6Hek6oqUloyxlXcSyAUmLpzACUK_Y97_u5y8DACi7IgAoIOJPBuMKq5WGVTSd5Cu4RwAUlBd9SYN6mQ3fqGR7O8M47bRmaWC1f1fEsQCVHLHmGQwyTHmoef53Vc865HBD52drAg2kRSUahBr_mCGselFMGxDdrQbEdpIPnOWmtDJH_WXwKqQqtfcUhA">
+                    </td>
+                </tr>
+            </table> 
+        </div>
+
+
+    </body>
+
+</html>
